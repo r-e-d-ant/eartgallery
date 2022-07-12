@@ -48,7 +48,7 @@ const Home = () => {
             <section className="section hero-allimages-container">
                 {error && <div>{ error }</div>}
                 {isPending && <div>Loading...</div>}
-                {arts && <Collections arts={arts.slice(5)} />}
+                {arts && <Collections arts={arts.slice(0, 7)} />}
 
                 <div className="call-to-see-collections-container">
                     <div className="container call-to-see-collections">

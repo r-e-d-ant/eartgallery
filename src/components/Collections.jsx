@@ -3,8 +3,7 @@ import { useState } from "react";
 import ArtInfo from "./ArtInfo";
 
 const Collections = ({arts}) => {
-    console.log(arts)
-    const [artInfo, setArtInfo] = useState(false);
+    const [artInfo, setArtInfo] = useState(true);
     const [artData, setArt] = useState(null)
 
     const handleShowImgInfoClick = (artData) => {
