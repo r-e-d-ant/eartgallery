@@ -2,11 +2,115 @@
     "arts": [
         {
             "id": 0,
+            "name": "A Monday on La Grande Jatte — 1884",
+            "author": "georges seurat",
+            "origin": "French",
+            "dateOut": "1840-1926",
+            "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_1.png"
+        },
+        {
+            "id": 1,
+            "name": "A Tuesday on La Grande Jatte — 1884",
+            "author": "georges seurat",
+            "origin": "French",
+            "dateOut": "1840-1926",
+            "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_2.png"
+        },
+        {
+            "id": 2,
+            "name": "A Wednesday on La Grande Jatte — 1884",
+            "author": "georges seurat",
+            "origin": "French",
+            "dateOut": "1840-1926",
+            "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_3.png"
+        },
+        {
+            "id": 3,
+            "name": "A Thursday on La Grande Jatte — 1884",
+            "author": "georges seurat",
+            "origin": "French",
+            "dateOut": "1840-1926",
+            "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_4.png"
+        },
+        {
+            "id": 4,
+            "name": "A Friday on La Grande Jatte — 1884",
+            "author": "georges seurat",
+            "origin": "French",
+            "dateOut": "1840-1926",
+            "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_5.png"
+        },
+        {
+            "id": 5,
+            "name": "A Saturday on La Grande Jatte — 1884",
+            "author": "georges seurat",
+            "origin": "French",
+            "dateOut": "1840-1926",
+            "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_6.png"
+        },
+        {
+            "id": 6,
             "name": "A Sunday on La Grande Jatte — 1884",
             "author": "georges seurat",
             "origin": "French",
             "dateOut": "1840-1926",
-            "artImage": ""
+            "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_7.png"
+        },
+        {
+            "id": 7,
+            "name": "A Mars on La Grande Jatte — 1884",
+            "author": "georges seurat",
+            "origin": "French",
+            "dateOut": "1840-1926",
+            "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_8.png"
+        },
+        {
+            "id": 8,
+            "name": "A Jupiter on La Grande Jatte — 1884",
+            "author": "georges seurat",
+            "origin": "French",
+            "dateOut": "1840-1926",
+            "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_9.png"
+        },
+        {
+            "id": 9,
+            "name": "A Moon on La Grande Jatte — 1884",
+            "author": "georges seurat",
+            "origin": "French",
+            "dateOut": "1840-1926",
+            "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_10.png"
+        },
+        {
+            "id": 10,
+            "name": "A Saturn on La Grande Jatte — 1884",
+            "author": "georges seurat",
+            "origin": "French",
+            "dateOut": "1840-1926",
+            "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_11.png"
+        },
+        {
+            "id": 11,
+            "name": "A Pluto on La Grande Jatte — 1884",
+            "author": "georges seurat",
+            "origin": "French",
+            "dateOut": "1840-1926",
+            "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_12.png"
+        },
+        {
+            "id": 12,
+            "name": "A Earth on La Grande Jatte — 1884",
+            "author": "georges seurat",
+            "origin": "French",
+            "dateOut": "1840-1926",
+            "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_13.png"
+        },
+        {
+            "id": 13,
+            "name": "A Uranus on La Grande Jatte — 1884",
+            "author": "georges seurat",
+            "origin": "French",
+            "dateOut": "1840-1926",
+            "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_14.png"
         }
     ]
 }
