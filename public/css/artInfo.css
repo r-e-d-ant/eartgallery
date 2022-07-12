@@ -1,4 +1,13 @@
 
+.bx-x {
+    cursor: pointer;
+    color: var(--second-clr);
+    position: fixed;
+    top: 0;
+    left: 0;
+    font-size: 2rem;
+}
+
 .artinfo-container {
     position: fixed;
     z-index: 3;
@@ -20,6 +29,7 @@
 .img-div {
     width: 50%;
     place-self: center;
+    margin: 1rem 0;
 }
 @media screen and (min-width: 964px) {
     .artinfo-container {
@@ -58,5 +68,39 @@
     font-size: .7rem;
 }
 
+.art-title {
+    font-family: 'Carter One', sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+}
 
+.art-description {
+    font-family: 'Futura';
+    line-height: 1.6rem;
+}
 
+.share-btn {
+    cursor: pointer;
+    background-color: var(--second-clr);
+    border: 1px solid rgba(15, 33, 36, 0.2);
+    border-radius: 5px;
+    padding: .5rem 1rem;
+    margin-top: 2rem;
+    display: flex;
+    align-items: center;
+}
+.inShareBtn {
+    color: rgba(15, 33, 36, 0.691);
+    font-size: 1rem;
+    font-weight: 400;
+}
+.share-btn:hover {
+    border: 1px solid #0f2124;
+}
+.share-btn:hover > .inShareBtn {
+    color: #0f2124;
+}
+
+.bx-share-alt {
+    margin-right: .2rem;
+}

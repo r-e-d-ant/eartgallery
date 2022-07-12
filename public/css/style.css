@@ -165,6 +165,7 @@ a {
   }
   
   .art-image-container {
+    cursor: zoom-in;
     position: relative;
     margin-bottom: 1rem;
   }

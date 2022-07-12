@@ -25,7 +25,7 @@ const Collections = ({arts}) => {
                 </div>
             ))}
         </div>
-        {artInfo && artData ? <ArtInfo art={artData} /> : null}
+        {artInfo && artData ? <ArtInfo art={artData} setArtInfo={setArtInfo} /> : null}
         </>
     );
 }

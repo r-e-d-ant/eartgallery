@@ -17,7 +17,6 @@ const CollectionsPage = () => {
                     <div className="form-control">
                         <input type="search" placeholder="Search by keyword, artist" className="search-input"></input>
                         <div className="icon-container search-btn">
-                            <div>se</div>
                             <i className='bx bx-search-alt-2'></i>
                         </div>
                     </div>

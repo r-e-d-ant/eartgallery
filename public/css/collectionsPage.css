@@ -37,18 +37,19 @@
     background-color: var(--second-clr);
     border: 2px solid var(--border-clr);
   }
-  .bx-search-alt-2 {
-    background-color: var(--primary-clr-alt);
-    color: var(--second-clr-alt);
-    font-size: 1.8rem;
-  }
   .search-btn {
+    cursor: pointer;
     background-color: var(--primary-clr-alt);
     padding: 0 1rem;
-    display: grid;
-    place-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 250ms background;
   }
-  .search-btn div {
+  .search-btn:hover {
+    background-color: var(--primary-clr);
+  }
+  .search-btn i {
     color: var(--second-clr);
-    font-size: 1rem;
+    font-size: 2rem;
   }
