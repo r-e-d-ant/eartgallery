@@ -1,8 +1,6 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
+## Online Art Gallery built in React.Js and Art gallery API from Art Institute of Chicago
+* check the static version <a href="https://github.com/r-e-d-ant/eartGallery-Static-v">here</a>
 
 In the project directory, you can run:
 
