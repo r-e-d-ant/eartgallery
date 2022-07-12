@@ -1,0 +1,24 @@
+
+.artinfo-container {
+    position: fixed;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    padding: 1rem;
+    background-color: var(--second-clr);
+    color: var(--primary-clr);
+}
+
+.bodyBgOver {
+    position: relative;
+}
+
+.bodyBgOver::before {
+    content: "";
+    z-index: 2;
+    position: absolute;
+    background-color: #0f2124b2;
+    inset: 0;
+}

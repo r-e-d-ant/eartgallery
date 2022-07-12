@@ -1,0 +1,38 @@
+
+/* ====== HEADER ====== */
+#header {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 1rem;
+}
+.logo {
+    color: var(--second-clr);
+    font-family: 'Carter One', sans-serif;
+    font-size: 1rem;
+}
+.nav-links {
+    display: flex;
+}
+.nav-item {
+    margin-right: 2rem;
+}
+.nav-item:last-child {
+    margin-right: 0;
+}
+.nav-link {
+    color: var(--second-clr);
+    font-family: 'Carter One', sans-serif;
+    font-size: 1.1rem;
+    transition: 150ms color;
+}
+@media (hover: hover) {
+    .nav-link {
+        color: var(--second-clr-alt);
+    }
+    .nav-link:hover {
+        color: var(--second-clr);
+    }
+}
