@@ -1,113 +1,127 @@
 {
     "arts": [
         {
-            "id": 0,
+            "artId": 0,
             "name": "A Monday on La Grande Jatte — 1884",
             "author": "georges seurat",
+            "description": "Loosely painted image of an open-air train station. On the right, a parked train gives off an enormous plumb of white smoke, making the scene look as though it were full of clouds. A huddled mass of barely discernible people crowd around the train on both sides of the tracks. Blue, green, and gray tones dominate.",
             "origin": "French",
             "dateOut": "1840-1926",
             "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_1.png"
         },
         {
-            "id": 1,
+            "artId": 1,
             "name": "A Tuesday on La Grande Jatte — 1884",
             "author": "georges seurat",
+            "description": "Loosely painted image of an open-air train station. On the right, a parked train gives off an enormous plumb of white smoke, making the scene look as though it were full of clouds. A huddled mass of barely discernible people crowd around the train on both sides of the tracks. Blue, green, and gray tones dominate.",
             "origin": "French",
             "dateOut": "1840-1926",
             "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_2.png"
         },
         {
-            "id": 2,
+            "artId": 2,
             "name": "A Wednesday on La Grande Jatte — 1884",
             "author": "georges seurat",
+            "description": "Loosely painted image of an open-air train station. On the right, a parked train gives off an enormous plumb of white smoke, making the scene look as though it were full of clouds. A huddled mass of barely discernible people crowd around the train on both sides of the tracks. Blue, green, and gray tones dominate.",
             "origin": "French",
             "dateOut": "1840-1926",
             "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_3.png"
         },
         {
-            "id": 3,
+            "artId": 3,
             "name": "A Thursday on La Grande Jatte — 1884",
             "author": "georges seurat",
+            "description": "Loosely painted image of an open-air train station. On the right, a parked train gives off an enormous plumb of white smoke, making the scene look as though it were full of clouds. A huddled mass of barely discernible people crowd around the train on both sides of the tracks. Blue, green, and gray tones dominate.",
             "origin": "French",
             "dateOut": "1840-1926",
             "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_4.png"
         },
         {
-            "id": 4,
+            "artId": 4,
             "name": "A Friday on La Grande Jatte — 1884",
             "author": "georges seurat",
+            "description": "Loosely painted image of an open-air train station. On the right, a parked train gives off an enormous plumb of white smoke, making the scene look as though it were full of clouds. A huddled mass of barely discernible people crowd around the train on both sides of the tracks. Blue, green, and gray tones dominate.",
             "origin": "French",
             "dateOut": "1840-1926",
             "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_5.png"
         },
         {
-            "id": 5,
+            "artId": 5,
             "name": "A Saturday on La Grande Jatte — 1884",
             "author": "georges seurat",
+            "description": "Loosely painted image of an open-air train station. On the right, a parked train gives off an enormous plumb of white smoke, making the scene look as though it were full of clouds. A huddled mass of barely discernible people crowd around the train on both sides of the tracks. Blue, green, and gray tones dominate.",
             "origin": "French",
             "dateOut": "1840-1926",
             "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_6.png"
         },
         {
-            "id": 6,
+            "artId": 6,
             "name": "A Sunday on La Grande Jatte — 1884",
             "author": "georges seurat",
+            "description": "Loosely painted image of an open-air train station. On the right, a parked train gives off an enormous plumb of white smoke, making the scene look as though it were full of clouds. A huddled mass of barely discernible people crowd around the train on both sides of the tracks. Blue, green, and gray tones dominate.",
             "origin": "French",
             "dateOut": "1840-1926",
             "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_7.png"
         },
         {
-            "id": 7,
+            "artId": 7,
             "name": "A Mars on La Grande Jatte — 1884",
             "author": "georges seurat",
+            "description": "Loosely painted image of an open-air train station. On the right, a parked train gives off an enormous plumb of white smoke, making the scene look as though it were full of clouds. A huddled mass of barely discernible people crowd around the train on both sides of the tracks. Blue, green, and gray tones dominate.",
             "origin": "French",
             "dateOut": "1840-1926",
             "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_8.png"
         },
         {
-            "id": 8,
+            "artId": 8,
             "name": "A Jupiter on La Grande Jatte — 1884",
             "author": "georges seurat",
+            "description": "Loosely painted image of an open-air train station. On the right, a parked train gives off an enormous plumb of white smoke, making the scene look as though it were full of clouds. A huddled mass of barely discernible people crowd around the train on both sides of the tracks. Blue, green, and gray tones dominate.",
             "origin": "French",
             "dateOut": "1840-1926",
             "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_9.png"
         },
         {
-            "id": 9,
+            "artId": 9,
             "name": "A Moon on La Grande Jatte — 1884",
             "author": "georges seurat",
+            "description": "Loosely painted image of an open-air train station. On the right, a parked train gives off an enormous plumb of white smoke, making the scene look as though it were full of clouds. A huddled mass of barely discernible people crowd around the train on both sides of the tracks. Blue, green, and gray tones dominate.",
             "origin": "French",
             "dateOut": "1840-1926",
             "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_10.png"
         },
         {
-            "id": 10,
+            "artId": 10,
             "name": "A Saturn on La Grande Jatte — 1884",
             "author": "georges seurat",
+            "description": "Loosely painted image of an open-air train station. On the right, a parked train gives off an enormous plumb of white smoke, making the scene look as though it were full of clouds. A huddled mass of barely discernible people crowd around the train on both sides of the tracks. Blue, green, and gray tones dominate.",
             "origin": "French",
             "dateOut": "1840-1926",
             "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_11.png"
         },
         {
-            "id": 11,
+            "artId": 11,
             "name": "A Pluto on La Grande Jatte — 1884",
             "author": "georges seurat",
+            "description": "Loosely painted image of an open-air train station. On the right, a parked train gives off an enormous plumb of white smoke, making the scene look as though it were full of clouds. A huddled mass of barely discernible people crowd around the train on both sides of the tracks. Blue, green, and gray tones dominate.",
             "origin": "French",
             "dateOut": "1840-1926",
             "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_12.png"
         },
         {
-            "id": 12,
+            "artId": 12,
             "name": "A Earth on La Grande Jatte — 1884",
             "author": "georges seurat",
+            "description": "Loosely painted image of an open-air train station. On the right, a parked train gives off an enormous plumb of white smoke, making the scene look as though it were full of clouds. A huddled mass of barely discernible people crowd around the train on both sides of the tracks. Blue, green, and gray tones dominate.",
             "origin": "French",
             "dateOut": "1840-1926",
             "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_13.png"
         },
         {
-            "id": 13,
+            "artId": 13,
             "name": "A Uranus on La Grande Jatte — 1884",
             "author": "georges seurat",
+            "description": "Loosely painted image of an open-air train station. On the right, a parked train gives off an enormous plumb of white smoke, making the scene look as though it were full of clouds. A huddled mass of barely discernible people crowd around the train on both sides of the tracks. Blue, green, and gray tones dominate.",
             "origin": "French",
             "dateOut": "1840-1926",
             "artImage": "https://raw.githubusercontent.com/r-e-d-ant/eartGallery-Static-v/master/assets/images/art_14.png"

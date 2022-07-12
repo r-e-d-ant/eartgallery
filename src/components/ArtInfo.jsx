@@ -1,17 +1,19 @@
 
-const ArtInfo = ({id, title, author, dateout, desc}) => {
+import { Link } from "react-router-dom"
+
+const ArtInfo = ({art}) => {
     return ( 
         <>
         <div className="artinfo-container">
             <div className="artist-info">
-                <h3 className="art-author">{ author }</h3>
-                <h5 className="date-out">{ dateout }</h5>
+                <h3 className="art-author">{ art.author }</h3>
+                <h5 className="date-out">{ art.origin +", "+ art.dateOut }</h5>
             </div>
-            <img src="/images/art_4.png" alt=""></img>
-            <h2 className="art-title">{ title }</h2>
-            <p className="art-description">{ desc }</p>
+            <img src={art.artImage} alt={ art.name }></img>
+            <h2 className="art-title">{ art.name }</h2>
+            <p className="art-description">{ art.description }</p>
             <div className="actions-container">
-                <a href="#">Share</a>
+                <Link to="#">Share</Link>
             </div>
         </div>
         </>

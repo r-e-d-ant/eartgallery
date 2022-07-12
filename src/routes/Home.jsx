@@ -1,12 +1,14 @@
 
-import Hero from "../components/Hero";
+import { Link } from "react-router-dom"
+
+import useFetch from "../hooks/useFetch"
 import Collections from "../components/Collections"
 
 const Home = () => {
+    const {data: arts, isPending, error} = useFetch('http://localhost:8000/arts');
+
     return (
         <main className="main">
-            {/* section 1 */}
-            <Hero />
             {/* section 2 */}
             <section className="section teaser-section">
                 <div className="left-attire-img attire-img-container card-img-shadow">
@@ -44,11 +46,14 @@ const Home = () => {
             </section>
             {/* section 4 */}
             <section className="section hero-allimages-container">
-                <Collections />
+                {error && <div>{ error }</div>}
+                {isPending && <div>Loading...</div>}
+                {arts && <Collections arts={arts.slice(5)} />}
+
                 <div className="call-to-see-collections-container">
                     <div className="container call-to-see-collections">
                         <h3 className="call-txt">Explore thousands of artworks in the museum’s collection—from our renowned icons to lesser-known works from every corner of the globe</h3>
-                        <a href="collections.html" className="btn btn-call-collections">See all of the Collections</a>
+                        <Link to={'/collections'} className="btn btn-call-collections">See all of the Collections</Link>
                     </div>
                 </div>
             </section>

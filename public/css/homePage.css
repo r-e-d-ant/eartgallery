@@ -123,7 +123,7 @@
   }
   .call-txt {
     color: var(--second-clr);
-    font-weight: 500;
+    font-weight: 600;
     font-size: 1.3rem;
     max-width: 40rem;
   }
