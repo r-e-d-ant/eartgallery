@@ -1,9 +1,20 @@
 
 import useFetch from "../hooks/useFetch"
 import Collections from "../components/Collections"
+import { useState } from "react";
 
 const CollectionsPage = () => {
-    const {data: arts, isPending, error} = useFetch('https://api.artic.edu/api/v1/artworks?page=1&limit=20&fields=id,api_link,title,artist_title,image_id,artist_display,publication_history,place_of_origin,date_display,copyright_notice');
+    const [page, setPage] = useState(1);
+    const {data: arts, isPending, error} = useFetch(`https://api.artic.edu/api/v1/artworks?page=${page}&limit=20&fields=id,api_link,title,artist_title,image_id,artist_display,publication_history,place_of_origin,date_display,copyright_notice`);
+
+    const nextPage = () => {
+        window.scroll({
+            top: 700, 
+            left: 0, 
+            behavior: 'smooth' 
+        })
+        setPage(page + 1)
+    }
 
     return ( 
         <main className="main">
@@ -28,6 +39,10 @@ const CollectionsPage = () => {
                 {isPending && <div>Loading...</div>}
                 {arts && <Collections arts={arts.data} apiConfig={arts.config} />}
             </section>
+
+            <div>
+                <button onClick={nextPage} style={{color: 'red'}}>next</button>
+            </div>
         </main>
      );
 }
