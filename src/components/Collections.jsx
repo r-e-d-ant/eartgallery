@@ -7,6 +7,7 @@ const Collections = ({arts, apiConfig}) => {
     const [artData, setArt] = useState(null)
 
     const handleShowImgInfoClick = (artData) => {
+        window.document.body.style.opacity = 0.5;
         setArtInfo(true)
         setArt(artData)
     }
@@ -14,7 +15,7 @@ const Collections = ({arts, apiConfig}) => {
     return (
         <>
         <div className="all-images container">
-            {arts.map((art) => (
+            {arts.map((art) => art.image_id && art.publication_history && (
                 <div key={art.id} className="art-image-container card-img-shadow" onClick={() => handleShowImgInfoClick(art)}>
                     <img src={`${apiConfig.iiif_url}/${art.image_id}/full/843,/0/default.jpg`} alt={art.title} className="art-image"></img>
                     <div className="artist-desc">
