@@ -5,7 +5,7 @@ import useFetch from "../hooks/useFetch"
 import Collections from "../components/Collections"
 
 const Home = () => {
-    const {data: arts, isPending, error} = useFetch('http://localhost:8000/arts');
+    const {data: arts, isPending, error} = useFetch('https://api.artic.edu/api/v1/artworks?page=1&limit=10&fields=id,api_link,title,artist_title,image_id,artist_display,publication_history,place_of_origin,date_display,copyright_notice');
 
     return (
         <main className="main">
@@ -48,7 +48,7 @@ const Home = () => {
             <section className="section hero-allimages-container">
                 {error && <div>{ error }</div>}
                 {isPending && <div>Loading...</div>}
-                {arts && <Collections arts={arts.slice(0, 7)} />}
+                {arts && <Collections arts={arts.data} apiConfig={arts.config} />}
 
                 <div className="call-to-see-collections-container">
                     <div className="container call-to-see-collections">

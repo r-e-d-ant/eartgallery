@@ -3,7 +3,7 @@ import useFetch from "../hooks/useFetch"
 import Collections from "../components/Collections"
 
 const CollectionsPage = () => {
-    const {data: arts, isPending, error} = useFetch('http://localhost:8000/arts');
+    const {data: arts, isPending, error} = useFetch('https://api.artic.edu/api/v1/artworks?page=1&limit=20&fields=id,api_link,title,artist_title,image_id,artist_display,publication_history,place_of_origin,date_display,copyright_notice');
 
     return ( 
         <main className="main">
@@ -26,7 +26,7 @@ const CollectionsPage = () => {
             <section className="section">
                 {error && <div>{ error }</div>}
                 {isPending && <div>Loading...</div>}
-                {arts && <Collections arts={arts} />}
+                {arts && <Collections arts={arts.data} apiConfig={arts.config} />}
             </section>
         </main>
      );
