@@ -128,15 +128,21 @@ a {
     cursor: pointer;
     display: flex;
   }
-  .hero-art-nav:first-child img {
-    border: 2px solid var(--second-clr);
+  .hero-art-nav img {
+    border: 2px solid transparent;
   }
   .hero-art-nav {
     margin-right: .5rem;
     transition: 150ms transform;
   }
-  .hero-art-nav:hover {
-    transform: scale(1.04);
+  .remove-border {
+    border: 2px solid transparent;
+  }
+  .add-border {
+    border: 2px solid var(--second-clr);
+  }
+  .hero-art-nav:hover img {
+    border: 2px solid var(--second-clr);
   }
   .hero-art-nav:last-child {
     margin-right: 0;

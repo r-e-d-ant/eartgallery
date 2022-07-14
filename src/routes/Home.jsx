@@ -53,7 +53,7 @@ const Home = () => {
                 <div className="call-to-see-collections-container">
                     <div className="container call-to-see-collections">
                         <h3 className="call-txt">Explore thousands of artworks in the museum’s collection—from our renowned icons to lesser-known works from every corner of the globe</h3>
-                        <Link to={'/collections'} className="btn btn-call-collections" onClick={window.scroll({top: 700, left: 0, behavior: 'smooth' })}>See all of the Collections</Link>
+                        <Link to={'/collections'} className="btn btn-call-collections">See all of the Collections</Link>
                     </div>
                 </div>
             </section>

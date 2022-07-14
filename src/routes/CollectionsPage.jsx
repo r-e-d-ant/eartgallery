@@ -7,23 +7,30 @@ const CollectionsPage = () => {
     const [page, setPage] = useState(1);
     const {data: arts, isPending, error} = useFetch(`https://api.artic.edu/api/v1/artworks?page=${page}&limit=20&fields=id,api_link,title,artist_title,image_id,artist_display,publication_history,place_of_origin,date_display`);
 
-    const goToTop = () => {
+    // go to the top of the page everytime when going on this route
+    window.scroll({
+        top: 0, 
+        left: 0,
+        behavior: 'smooth'
+    })
+
+    const goToGalleryTop = () => {
         // function to scroll at the top
         window.scroll({
             top: 700, 
             left: 0, 
-            behavior: 'smooth' 
+            behavior: 'smooth'
         })
     }
     const nextPage = () => {
         // go to next page
-        goToTop();
+        goToGalleryTop();
         setPage(page + 1);
     }
 
     const prevPage = () => {
         // go to previous page
-        goToTop();
+        goToGalleryTop();
         setPage(page - 1);
     }
 

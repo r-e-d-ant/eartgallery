@@ -1,15 +1,31 @@
 
+import { useEffect } from "react";
 import { useState } from "react";
 import Header from "./Header"
 
 const Hero = () => {
     const [heroImg, setHeroImg] = useState('/images/hero_img_1.png');
 
-    const handleNavImageClick = (imgUrl) => {
+    useEffect(() => {
+        const firstImg = document.querySelector('.firstImg')
+        firstImg.classList.add('add-border');
+    }, [])
+
+    const handleNavImageClick = (e, imgUrl) => {
         setHeroImg(imgUrl)
+
+        // set the active border on nav //
+
+        /* remove the border on all the siblings and add it to the target nav */
+        for (let i = 0; i < e.target.parentNode.parentNode.children.length; i++) {
+            const el = e.target.parentNode.parentNode.children[i];
+            el.firstChild.classList.remove('remove-border');
+            
+        }
+        e.target.classList.add('add-border');
     }
     return ( 
-        <div>
+        <div id="hero">
             <section className="section hero-section" style={{ backgroundImage: "url("+heroImg+")" }}>
                 <Header />
                 <div className="hero-art-info-container">
@@ -20,16 +36,16 @@ const Hero = () => {
                     </div>
                     <div className="hero-art-nav-container container">
                         <div className="hero-art-nav">
-                            <img src="/images/hero_art_navs/hero_nav_img_1.png" alt="" onClick={() => handleNavImageClick('/images/hero_img_1.png')}></img>
+                            <img src="/images/hero_art_navs/hero_nav_img_1.png" alt="" className="remove-border firstImg" onClick={(e) => handleNavImageClick(e, '/images/hero_img_1.png')}></img>
                         </div>
                         <div className="hero-art-nav">
-                            <img src="/images/hero_art_navs/hero_nav_img_2.png" alt="" onClick={() => handleNavImageClick('/images/hero_img_2.png')}></img>
+                            <img src="/images/hero_art_navs/hero_nav_img_2.png" alt="" className="remove-border" onClick={(e) => handleNavImageClick(e, '/images/hero_img_2.png')}></img>
                         </div>
                         <div className="hero-art-nav">
-                            <img src="/images/hero_art_navs/hero_nav_img_3.png" alt="" onClick={() => handleNavImageClick('/images/hero_img_3.png')}></img>
+                            <img src="/images/hero_art_navs/hero_nav_img_3.png" alt="" className="remove-border" onClick={(e) => handleNavImageClick(e, '/images/hero_img_3.png')}></img>
                         </div>
                         <div className="hero-art-nav">
-                            <img src="/images/hero_art_navs/hero_nav_img_4.png" alt="" onClick={() => handleNavImageClick('/images/hero_img_4.png')}></img>
+                            <img src="/images/hero_art_navs/hero_nav_img_4.png" alt="" className="remove-border" onClick={(e) => handleNavImageClick(e, '/images/hero_img_4.png')}></img>
                         </div>
                     </div>
                 </div>
