@@ -53,3 +53,36 @@
     color: var(--second-clr);
     font-size: 2rem;
   }
+
+/* ----------- */
+
+.nav-btns-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-btns-container button {
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1.2rem;
+  margin: 2rem 0;
+  padding: .4rem 0;
+  width: 5rem;
+  border: none;
+  color: var(--second-clr);
+  background-color: var(--primary-clr-alt);
+  transition: 250ms background, 150ms border;
+}
+.nav-btns-container button:disabled {
+  cursor: not-allowed;
+  background-color: var(--second-clr-alt);
+}
+.nav-btns-container button:hover:disabled {
+  background-color: var(--second-clr-alt);
+}
+.nav-btns-container button:first-child {
+  margin-right: 1rem;
+}
+.nav-btns-container button:hover {
+  background-color: var(--primary-clr);
+}

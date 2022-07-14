@@ -46,8 +46,8 @@ const Home = () => {
             </section>
             {/* section 4 */}
             <section className="section hero-allimages-container">
-                {error && <div>{ error }</div>}
-                {isPending && <div>Loading...</div>}
+                {error && <div className="error-message container"><h2>{ error }</h2></div>}
+                {isPending && <div className="loading container">Loading...</div>}
                 {arts && <Collections arts={arts.data} apiConfig={arts.config} />}
 
                 <div className="call-to-see-collections-container">

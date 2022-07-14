@@ -11,6 +11,7 @@
     --shadow-clr-top: linear-gradient(0deg, #0f212400 0%, #0F2124 100%);
     --border-clr: #0f2124;
     --danger-clr: #ec434c;
+    --danger-clr-alt: #ec434b8b;
     --warning-clr: #eacf4f;
     --info-clr: #4ba5b4;
 }
@@ -42,6 +43,18 @@ ul,li {
 a {
     text-decoration: none;
     color: inherit;
+}
+.error-message {
+  padding: .7rem 0;
+  background-color: var(--danger-clr-alt);
+  border: thin solid var(--danger-clr);
+  text-align: center;
+}
+.error-message h2 {
+  color: var(--second-clr);
+  text-transform: capitalize;
+  font-weight: 500;
+  font-size: 1.2rem;
 }
 .container {
     margin: 0 .5rem;

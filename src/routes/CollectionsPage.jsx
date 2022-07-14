@@ -5,15 +5,26 @@ import { useState } from "react";
 
 const CollectionsPage = () => {
     const [page, setPage] = useState(1);
-    const {data: arts, isPending, error} = useFetch(`https://api.artic.edu/api/v1/artworks?page=${page}&limit=20&fields=id,api_link,title,artist_title,image_id,artist_display,publication_history,place_of_origin,date_display,copyright_notice`);
+    const {data: arts, isPending, error} = useFetch(`https://api.artic.edu/api/v1/artworks?page=${page}&limit=20&fields=id,api_link,title,artist_title,image_id,artist_display,publication_history,place_of_origin,date_display`);
 
-    const nextPage = () => {
+    const goToTop = () => {
+        // function to scroll at the top
         window.scroll({
             top: 700, 
             left: 0, 
             behavior: 'smooth' 
         })
-        setPage(page + 1)
+    }
+    const nextPage = () => {
+        // go to next page
+        goToTop();
+        setPage(page + 1);
+    }
+
+    const prevPage = () => {
+        // go to previous page
+        goToTop();
+        setPage(page - 1);
     }
 
     return ( 
@@ -35,13 +46,14 @@ const CollectionsPage = () => {
             </section>
             {/* section 3 */}
             <section className="section">
-                {error && <div>{ error }</div>}
-                {isPending && <div>Loading...</div>}
+                {error && <div className="error-message container"><h2>{ error }</h2></div>}
+                {isPending && <div className="loading container">Loading...</div>}
                 {arts && <Collections arts={arts.data} apiConfig={arts.config} />}
             </section>
 
-            <div>
-                <button onClick={nextPage} style={{color: 'red'}}>next</button>
+            <div className="container nav-btns-container">
+                <button onClick={prevPage} disabled={page <= 1 ? true : false}>prev</button>
+                <button onClick={nextPage}>next</button>
             </div>
         </main>
      );
