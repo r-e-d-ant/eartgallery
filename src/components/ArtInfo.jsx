@@ -1,7 +1,7 @@
 
 const ArtInfo = ({art, setArtInfo, apiConfig}) => {
     const closeArtInfo = () => {
-        window.document.body.style.opacity = 1;
+        // window.document.body.style.opacity = 1;
         setArtInfo(false);
     }
     return ( 

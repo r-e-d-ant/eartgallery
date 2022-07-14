@@ -1,37 +1,38 @@
 
 import useFetch from "../hooks/useFetch"
 import Collections from "../components/Collections"
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 const CollectionsPage = () => {
-    const [page, setPage] = useState(1);
-    const {data: arts, isPending, error} = useFetch(`https://api.artic.edu/api/v1/artworks?page=${page}&limit=20&fields=id,api_link,title,artist_title,image_id,artist_display,publication_history,place_of_origin,date_display`);
+    const [currentUrl, setCurrentUrl] = useState('https://api.artic.edu/api/v1/artworks?page=1&limit=10&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display');
+    const {data: arts, isPending, error} = useFetch(`${currentUrl}`);
+
+    const location = useLocation();
 
     // go to the top of the page everytime when going on this route
-    window.scroll({
-        top: 0, 
-        left: 0,
-        behavior: 'smooth'
-    })
+    useEffect(() => {
+        window.scroll({
+            top: 0,
+            left: 0,
+            behaviour: 'smooth'
+        })
+    }, [])
 
     const goToGalleryTop = () => {
         // function to scroll at the top
-        window.scroll({
-            top: 700, 
-            left: 0, 
-            behavior: 'smooth'
-        })
+        window.location = `${location.pathname}#this-loc`;
     }
-    const nextPage = () => {
+    const nextPage = (next_url) => {
         // go to next page
+        setCurrentUrl(next_url);
         goToGalleryTop();
-        setPage(page + 1);
     }
 
-    const prevPage = () => {
+    const prevPage = (prev_url) => {
         // go to previous page
+        setCurrentUrl(prev_url);
         goToGalleryTop();
-        setPage(page - 1);
     }
 
     return ( 
@@ -52,15 +53,15 @@ const CollectionsPage = () => {
                 </form>
             </section>
             {/* section 3 */}
-            <section className="section">
+            <section className="section" id="this-loc">
                 {error && <div className="error-message container"><h2>{ error }</h2></div>}
                 {isPending && <div className="loading container">Loading...</div>}
-                {arts && <Collections arts={arts.data} apiConfig={arts.config} />}
+                {arts && <Collections arts={arts.data} apiConfig={arts.config} pagination={arts.pagination} />}
             </section>
 
             <div className="container nav-btns-container">
-                <button onClick={prevPage} disabled={page <= 1 ? true : false}>prev</button>
-                <button onClick={nextPage}>next</button>
+                {arts && <button onClick={() => prevPage(arts.pagination.prev_url)} disabled={arts.pagination.current_page <= 1 ? true : false}>prev</button>}
+                {arts && <button onClick={() => nextPage(arts.pagination.next_url)} disabled={arts.pagination.current_page === arts.pagination.total_pages ? true : false }>next</button>}
             </div>
         </main>
      );
