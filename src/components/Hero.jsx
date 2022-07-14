@@ -7,7 +7,7 @@ const Hero = () => {
     const [heroImg, setHeroImg] = useState('/images/hero_img_1.png');
 
     useEffect(() => {
-        const firstImg = document.querySelector('.firstImg')
+        const firstImg = document.querySelector('.firstImg');
         firstImg.classList.add('add-border');
     }, [])
 
@@ -19,10 +19,15 @@ const Hero = () => {
         /* remove the border on all the siblings and add it to the target nav */
         for (let i = 0; i < e.target.parentNode.parentNode.children.length; i++) {
             const el = e.target.parentNode.parentNode.children[i];
-            el.firstChild.classList.remove('remove-border');
-            
+            if(el.firstChild.classList.contains('add-border')) {
+                el.firstChild.classList.remove('add-border');
+                el.firstChild.classList.add('remove-border');
+            }
         }
-        e.target.classList.add('add-border');
+        if(e.target.classList.contains('remove-border')) {
+            e.target.classList.remove('remove-border');
+            e.target.classList.add('add-border');
+        } e.target.classList.add('add-border');
     }
     return ( 
         <div id="hero">
@@ -36,7 +41,7 @@ const Hero = () => {
                     </div>
                     <div className="hero-art-nav-container container">
                         <div className="hero-art-nav">
-                            <img src="/images/hero_art_navs/hero_nav_img_1.png" alt="" className="remove-border firstImg" onClick={(e) => handleNavImageClick(e, '/images/hero_img_1.png')}></img>
+                            <img src="/images/hero_art_navs/hero_nav_img_1.png" alt="" className="firstImg" onClick={(e) => handleNavImageClick(e, '/images/hero_img_1.png')}></img>
                         </div>
                         <div className="hero-art-nav">
                             <img src="/images/hero_art_navs/hero_nav_img_2.png" alt="" className="remove-border" onClick={(e) => handleNavImageClick(e, '/images/hero_img_2.png')}></img>

@@ -128,9 +128,6 @@ a {
     cursor: pointer;
     display: flex;
   }
-  .hero-art-nav img {
-    border: 2px solid transparent;
-  }
   .hero-art-nav {
     margin-right: .5rem;
     transition: 150ms transform;
