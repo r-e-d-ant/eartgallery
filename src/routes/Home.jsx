@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import useFetch from "../hooks/useFetch"
 import Collections from "../components/Collections"
 
-const Home = () => {
+const Home = ({setDarkBg}) => {
     const {data: arts, isPending, error} = useFetch('https://api.artic.edu/api/v1/artworks?page=1&limit=7&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice');
 
     return (
@@ -48,7 +48,7 @@ const Home = () => {
             <section className="section hero-allimages-container">
                 {error && <div className="error-message container"><h2>{ error }</h2></div>}
                 {isPending && <div className="loading container">Loading...</div>}
-                {arts && <Collections arts={arts.data} apiConfig={arts.config} />}
+                {arts && <Collections arts={arts.data} apiConfig={arts.config} setDarkBg={setDarkBg} />}
 
                 <div className="call-to-see-collections-container">
                     <div className="container call-to-see-collections">

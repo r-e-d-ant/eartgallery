@@ -2,14 +2,16 @@
 import { useState } from "react";
 import ArtInfo from "./ArtInfo";
 
-const Collections = ({arts, apiConfig}) => {
+const Collections = ({arts, apiConfig, setDarkBg}) => {
     const [artInfo, setArtInfo] = useState(true);
     const [artData, setArt] = useState(null)
+    const [darkMainBg, setDarkMainBg] = useState(false);
+    setDarkBg(darkMainBg);
 
     const handleShowImgInfoClick = (artData) => {
-        // window.document.body.style.opacity = 0.5;
         setArtInfo(true)
         setArt(artData)
+        setDarkMainBg(true)
     }
 
     return (
@@ -26,7 +28,7 @@ const Collections = ({arts, apiConfig}) => {
                 </div>
             ))}
         </div>
-        {artInfo && artData ? <ArtInfo art={artData} setArtInfo={setArtInfo} apiConfig={apiConfig} /> : null}
+        {artInfo && artData ? <ArtInfo art={artData} setArtInfo={setArtInfo} apiConfig={apiConfig} setDarkMainBg={setDarkMainBg} /> : null}
         </>
     );
 }

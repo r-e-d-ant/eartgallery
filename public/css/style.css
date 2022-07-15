@@ -71,6 +71,18 @@ a {
   font-size: 1.2rem;
 }
 
+.dark-bg {
+  position: relative;
+}
+.dark-bg::before {
+  content: '';
+  font-size: 3rem;
+  position: absolute;
+  inset: 0;
+  background-color: #0f2124bb;
+  z-index: 3;
+}
+
 /* ====== MAIN ====== */
 .hero-section {
     position: relative;

@@ -6,22 +6,20 @@ import Home from "./routes/Home";
 import CollectionsPage from "./routes/CollectionsPage";
 import NotFound from "./routes/NotFound";
 import Footer from "./components/Footer";
+import { useState } from "react";
 
 function App() {
+
+  const [darkBg, setDarkBg] = useState(false);
+
   return (
     <Router>
-      <div className="App">
+      <div className={"App " + (darkBg ? 'dark-bg' : '')}>
         <Hero />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home setDarkBg={setDarkBg} />} />
           <Route path="/collections" element={<CollectionsPage />} />
           <Route path="*" element={<NotFound />} />
-
-          {/* External links */}
-          <Route path='/developer-portfolio' component={() => { 
-            window.location.href = 'https://thierrymugisha.netlify.app/'; 
-            return null;
-          }}/>
         </Routes>
         <Footer />
       </div>

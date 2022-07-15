@@ -1,8 +1,8 @@
 
-const ArtInfo = ({art, setArtInfo, apiConfig}) => {
+const ArtInfo = ({art, setArtInfo, apiConfig, setDarkMainBg}) => {
     const closeArtInfo = () => {
-        // window.document.body.style.opacity = 1;
         setArtInfo(false);
+        setDarkMainBg(false);
     }
     return ( 
         <>
