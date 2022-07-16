@@ -4,14 +4,12 @@ import ArtInfo from "./ArtInfo";
 
 const Collections = ({arts, apiConfig, setDarkBg}) => {
     const [artInfo, setArtInfo] = useState(true);
-    const [artData, setArt] = useState(null)
-    const [darkMainBg, setDarkMainBg] = useState(false);
-    setDarkBg(darkMainBg);
+    const [artData, setArt] = useState(null);
 
     const handleShowImgInfoClick = (artData) => {
         setArtInfo(true)
         setArt(artData)
-        setDarkMainBg(true)
+        setDarkBg(true)
     }
 
     return (
@@ -28,7 +26,7 @@ const Collections = ({arts, apiConfig, setDarkBg}) => {
                 </div>
             ))}
         </div>
-        {artInfo && artData ? <ArtInfo art={artData} setArtInfo={setArtInfo} apiConfig={apiConfig} setDarkMainBg={setDarkMainBg} /> : null}
+        {artInfo && artData ? <ArtInfo art={artData} setArtInfo={setArtInfo} apiConfig={apiConfig} setDarkBg={setDarkBg} /> : null}
         </>
     );
 }

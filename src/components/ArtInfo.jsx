@@ -1,8 +1,8 @@
 
-const ArtInfo = ({art, setArtInfo, apiConfig, setDarkMainBg}) => {
+const ArtInfo = ({art, setArtInfo, apiConfig, setDarkBg}) => {
     const closeArtInfo = () => {
         setArtInfo(false);
-        setDarkMainBg(false);
+        setDarkBg(false);
     }
     return ( 
         <>
