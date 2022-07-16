@@ -20,7 +20,7 @@ function App() {
         <Hero />
         <Routes>
           <Route path="/" element={<Home setDarkBg={setDarkBg} />} />
-          <Route path="/collections" element={<CollectionsPage />} />
+          <Route path="/collections" element={<CollectionsPage setDarkBg={setDarkBg} />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <Footer />

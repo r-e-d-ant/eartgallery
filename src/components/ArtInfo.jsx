@@ -1,15 +1,12 @@
-import { useLocation } from "react-router-dom";
 
 const ArtInfo = ({art, setArtInfo, apiConfig, setDarkBg}) => {
     const closeArtInfo = () => {
         setArtInfo(false);
         setDarkBg(false);
     }
-    const location = useLocation();
-
     return ( 
         <>
-        <i className="bx bx-x" onClick={closeArtInfo} style={{color: location.pathname === '/' ? "#fff" : "#0f2124"}}></i>
+        <i className="bx bx-x" onClick={closeArtInfo}></i>
         <div className="artinfo-container">
             <div className="modal">
                 <div className="artist-info container">

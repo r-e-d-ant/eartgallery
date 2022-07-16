@@ -4,8 +4,8 @@ import Collections from "../components/Collections"
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-const CollectionsPage = () => {
-    const [currentUrl, setCurrentUrl] = useState('https://api.artic.edu/api/v1/artworks?page=1&limit=10&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display');
+const CollectionsPage = ({setDarkBg}) => {
+    const [currentUrl, setCurrentUrl] = useState('https://api.artic.edu/api/v1/artworks?page=1&limit=12&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice');
     const {data: arts, isPending, error} = useFetch(`${currentUrl}`);
 
     const location = useLocation();
@@ -56,7 +56,7 @@ const CollectionsPage = () => {
             <section className="section" id="this-loc">
                 {error && <div className="error-message container"><h2>{ error }</h2></div>}
                 {isPending && <div className="loading container">Loading...</div>}
-                {arts && <Collections arts={arts.data} apiConfig={arts.config} pagination={arts.pagination} />}
+                {arts && <Collections arts={arts.data} apiConfig={arts.config} pagination={arts.pagination} setDarkBg={setDarkBg} />}
             </section>
 
             <div className="container nav-btns-container">

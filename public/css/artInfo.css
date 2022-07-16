@@ -1,6 +1,7 @@
 
 .bx-x {
     cursor: pointer;
+    color: var(--second-clr);
     position: fixed;
     z-index: 4;
     top: 0;
@@ -77,6 +78,8 @@
 .art-description {
     font-family: 'Futura';
     line-height: 1.6rem;
+    white-space: pre-line;
+    max-width: 60rem;
 }
 
 .share-btn {
