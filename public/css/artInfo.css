@@ -1,14 +1,13 @@
 
 .bx-x {
     cursor: pointer;
-    color: var(--second-clr);
+    color: rgb(158, 158, 158);
     position: fixed;
-    z-index: 4;
-    top: 0;
-    left: 0;
+    z-index: 5;
+    top: 1.1rem;
+    left: 0rem;
     font-size: 2rem;
 }
-
 .artinfo-container {
     position: fixed;
     z-index: 4;
@@ -18,7 +17,7 @@
     border-radius: 5px;
     padding: 1rem;
     width: 100%;
-    height: 98vh;
+    height: 100vh;
     overflow-y: scroll;
     overscroll-behavior: contain;
     background-color: var(--second-clr);
@@ -36,6 +35,10 @@
     .artinfo-container {
         width: 60rem;
     }
+    .bx-x {
+        top: 0;
+        left: 0;
+    }
 }
 @media screen and (min-width: 1042px) {
     .artinfo-container {
@@ -47,17 +50,6 @@
         width: 75rem;
     }
 }
-/* .bodyBgOver {
-    position: relative;
-}
-.bodyBgOver::before {
-    content: "";
-    z-index: 2;
-    position: absolute;
-    background-color: #0f2124de;
-    inset: 0;
-} */
-
 .art-author {
     text-transform: capitalize;
     font-weight: 500;
