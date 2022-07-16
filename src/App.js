@@ -10,6 +10,8 @@ import { useState } from "react";
 
 function App() {
 
+  // i pass this state here because i want that the background color change when an image is clicked
+  // and there will be a modal only on focus!
   const [darkBg, setDarkBg] = useState(false);
 
   return (
