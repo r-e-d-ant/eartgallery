@@ -5,13 +5,16 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
 const CollectionsPage = ({setDarkBg}) => {
-    const [searchData, setSearchData] = useState('');
-    const [searchError, setSearchError] = useState(false);
+    const [searchData, setSearchData] = useState(''); // to store search query
+    const [searchError, setSearchError] = useState(false); // to store search error message
+
+    // url to fetch data from
     const [currentUrl, setCurrentUrl] = useState('https://api.artic.edu/api/v1/artworks?page=1&limit=12&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice,thumbnail');
-    const {data: arts, isPending, error} = useFetch(`${currentUrl}`);
+    const {data: arts, isPending, error} = useFetch(`${currentUrl}`); // fetching the data
 
-    const location = useLocation();
+    const location = useLocation(); // to get current route informations
 
+    // funtction to handle search queries
     const handleSearchData = () => {
         if(searchData === '') {
             setSearchError(true);
@@ -34,17 +37,20 @@ const CollectionsPage = ({setDarkBg}) => {
         // function to scroll at the top
         window.location = `${location.pathname}#this-loc`;
     }
+
+    // navigation buttons when we are not viewing searched data
     const nextPage = (next_url) => {
-        // go to next page
+        // go to next url
         setCurrentUrl(next_url);
         goToGalleryTop();
     }
-
     const prevPage = (prev_url) => {
-        // go to previous page
+        // go to previous url
         setCurrentUrl(prev_url);
         goToGalleryTop();
     }
+
+    // navigation buttons when we not viewing searched data
     const nextPageSearch = () => {
         // go to searched next page
         setCurrentUrl(`https://api.artic.edu/api/v1/artworks/search?q=${searchData}&page=${arts.pagination.current_page + 1}&limit=20&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice,thumbnail`);
