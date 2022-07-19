@@ -6,13 +6,19 @@ import { useLocation } from "react-router-dom";
 
 const CollectionsPage = ({setDarkBg}) => {
     const [searchData, setSearchData] = useState('');
+    const [searchError, setSearchError] = useState(false);
     const [currentUrl, setCurrentUrl] = useState('https://api.artic.edu/api/v1/artworks?page=1&limit=12&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice');
     const {data: arts, isPending, error} = useFetch(`${currentUrl}`);
 
     const location = useLocation();
 
     const handleSearchData = () => {
-        setCurrentUrl(`https://api.artic.edu/api/v1/artworks/search?q=${searchData}&limit=100&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice`);
+        if(searchData === '') {
+            setSearchError(true);
+        } else {
+            setSearchError(false);
+            setCurrentUrl(`https://api.artic.edu/api/v1/artworks/search?q=${searchData}&limit=100&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice`);
+        }
     }
 
     // go to the top of the page everytime when going on this route
@@ -53,13 +59,14 @@ const CollectionsPage = ({setDarkBg}) => {
                         <input
                             type="search"
                             placeholder="Search by keyword, artist"
-                            className="search-input"
+                            className={ "search-input " + (searchError ? 'error-input' : '') }
                             onChange={(e) => setSearchData(e.target.value)}
                             ></input>
                         <div className="icon-container search-btn" onClick={handleSearchData}>
                             <i className='bx bx-search-alt-2'></i>
                         </div>
                     </div>
+                    {searchError && <p className="search-warning">Type keyword to search</p>}
                 </form>
             </section>
             {/* section 3 */}

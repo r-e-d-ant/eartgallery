@@ -37,6 +37,18 @@
     background-color: var(--second-clr);
     border: 2px solid var(--border-clr);
   }
+  .form-control .error-input {
+    border: 2px solid var(--danger-clr-alt);
+  }
+  .form-control .error-input:focus {
+    border: 2px solid var(--danger-clr-alt);
+  }
+  .search-warning {
+    color: var(--danger-clr-alt);
+    font-size: .8rem;
+    margin-top: .2rem;
+  }
+  /* ---------- */
   .search-btn {
     cursor: pointer;
     background-color: var(--primary-clr-alt);
