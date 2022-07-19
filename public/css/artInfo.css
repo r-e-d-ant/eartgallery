@@ -70,7 +70,8 @@
 .art-description {
     font-family: 'Futura';
     line-height: 1.6rem;
-    white-space: pre-line;
+    white-space: wrap;
+    white-space: pre-wrap;
     max-width: 60rem;
 }
 
