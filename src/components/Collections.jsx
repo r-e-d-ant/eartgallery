@@ -17,7 +17,7 @@ const Collections = ({arts, apiConfig, setDarkBg}) => {
         <div className="all-images container">
             {arts.map((art) => art.image_id && (
                 <div key={art.id} className="art-image-container card-img-shadow" onClick={() => handleShowImgInfoClick(art)}>
-                    <img src={`${apiConfig.iiif_url}/${art.image_id}/full/843,/0/default.jpg`} alt={art.title} className="art-image"></img>
+                    <img src={`${apiConfig.iiif_url}/${art.image_id}/full/843,/0/default.jpg`} alt={art.thumbnail.alt_text} className="art-image"></img>
                     <div className="artist-desc">
                         <h2 className="art-title">{art.title}</h2>
                         <h3 className="art-author">{art.artist_title}</h3>

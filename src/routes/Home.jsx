@@ -5,7 +5,8 @@ import useFetch from "../hooks/useFetch"
 import Collections from "../components/Collections"
 
 const Home = ({setDarkBg}) => {
-    const {data: arts, isPending, error} = useFetch('https://api.artic.edu/api/v1/artworks?page=1&limit=7&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice');
+    const {data: arts, isPending, error} = useFetch('https://api.artic.edu/api/v1/artworks?page=1&limit=12&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice,thumbnail');
+    // console.log(arts.data);
 
     return (
         <main className="main">
