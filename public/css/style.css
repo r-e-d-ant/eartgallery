@@ -42,7 +42,10 @@ ul,li {
 }
 a {
     text-decoration: none;
-    color: inherit;
+    color: var(--info-clr);
+}
+a:hover {
+    text-decoration: underline;
 }
 .container {
     margin: 0 .5rem;
