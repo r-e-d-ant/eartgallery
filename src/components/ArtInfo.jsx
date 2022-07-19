@@ -17,7 +17,7 @@ const ArtInfo = ({art, setArtInfo, apiConfig, setDarkBg}) => {
                 <img src={`${apiConfig.iiif_url}/${art.image_id}/full/843,/0/default.jpg`} alt={art.artist_title} className="art-image"></img>
                 </div>
                 <h2 className="art-title container">{ art.title }</h2>
-                {art.publication_history ? <p className="art-description container">{ art.publication_history }</p> : <p className="art-description container">No publication history for this art</p>}
+                {art.publication_history ? <p className="art-description container">{ art.publication_history.replace(/<[^>]+>/g, '') }</p> : <p className="art-description container">No publication history for this art</p>}
                 <div className="actions-container container">
                 <button className="share-btn">
                     <i className="bx bx-share-alt inShareBtn"></i>
