@@ -9,7 +9,7 @@ const CollectionsPage = ({setDarkBg}) => {
     const [searchError, setSearchError] = useState(false); // to store search error message
 
     // url to fetch data from
-    const [currentUrl, setCurrentUrl] = useState('https://api.artic.edu/api/v1/artworks?page=1&limit=12&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice,thumbnail');
+    const [currentUrl, setCurrentUrl] = useState('https://api.artic.edu/api/v1/artworks?page=1&limit=50&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice,thumbnail');
     const {data: arts, isPending, error} = useFetch(`${currentUrl}`); // fetching the data
 
     const location = useLocation(); // to get current route informations
@@ -20,7 +20,7 @@ const CollectionsPage = ({setDarkBg}) => {
             setSearchError(true);
         } else {
             setSearchError(false);
-            setCurrentUrl(`https://api.artic.edu/api/v1/artworks/search?q=${searchData}&page=1&limit=20&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice,thumbnail`);
+            setCurrentUrl(`https://api.artic.edu/api/v1/artworks/search?q=${searchData}&page=1&limit=50&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice,thumbnail`);
         }
     }
 
@@ -53,13 +53,13 @@ const CollectionsPage = ({setDarkBg}) => {
     // navigation buttons when we not viewing searched data
     const nextPageSearch = () => {
         // go to searched next page
-        setCurrentUrl(`https://api.artic.edu/api/v1/artworks/search?q=${searchData}&page=${arts.pagination.current_page + 1}&limit=20&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice,thumbnail`);
+        setCurrentUrl(`https://api.artic.edu/api/v1/artworks/search?q=${searchData}&page=${arts.pagination.current_page + 1}&limit=50&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice,thumbnail`);
         goToGalleryTop();
     }
 
     const prevPageSearch = () => {
         // go to searched previous page
-        setCurrentUrl(`https://api.artic.edu/api/v1/artworks/search?q=${searchData}&page=${arts.pagination.current_page - 1}&limit=20&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice,thumbnail`);
+        setCurrentUrl(`https://api.artic.edu/api/v1/artworks/search?q=${searchData}&page=${arts.pagination.current_page - 1}&limit=50&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice,thumbnail`);
         goToGalleryTop();
     }
 
@@ -93,7 +93,7 @@ const CollectionsPage = ({setDarkBg}) => {
                 {arts && <Collections arts={arts.data} apiConfig={arts.config} pagination={arts.pagination} setDarkBg={setDarkBg} />}
             </section>
 
-            {arts.pagination.prev_url ? (
+            {arts && arts.pagination.prev_url ? (
                 <div className="container nav-btns-container">
                     {arts && <button onClick={() => prevPage(arts.pagination.prev_url)} disabled={arts.pagination.current_page <= 1 ? true : false}>prev</button>}
                     {arts && <button onClick={() => nextPage(arts.pagination.next_url)} disabled={arts.pagination.current_page === arts.pagination.total_pages ? true : false }>next</button>}
