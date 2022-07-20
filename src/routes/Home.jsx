@@ -2,13 +2,17 @@
 import { Link } from "react-router-dom"
 
 import useFetch from "../hooks/useFetch"
+import Hero from "../components/Hero";
 import Collections from "../components/Collections"
 
 const Home = ({setDarkBg}) => {
     const {data: arts, isPending, error} = useFetch('https://api.artic.edu/api/v1/artworks?page=1&limit=12&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice,thumbnail');
-    
+
     return (
         <main className="main">
+            {/* section 1 */}
+            {/* {arts && <Hero arts={arts} />} */}
+            <Hero />
             {/* section 2 */}
             <section className="section teaser-section">
                 <div className="left-attire-img attire-img-container card-img-shadow">

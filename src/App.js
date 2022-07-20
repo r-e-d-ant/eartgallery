@@ -1,7 +1,6 @@
 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
-import Hero from "./components/Hero";
 import Home from "./routes/Home";
 import CollectionsPage from "./routes/CollectionsPage";
 import NotFound from "./routes/NotFound";
@@ -17,7 +16,6 @@ function App() {
   return (
     <Router>
       <div className={"App " + (darkBg ? 'dark-bg' : '')}>
-        <Hero />
         <Routes>
           <Route path="/" element={<Home setDarkBg={setDarkBg} />} />
           <Route path="/collections" element={<CollectionsPage setDarkBg={setDarkBg} />} />

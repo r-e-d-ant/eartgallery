@@ -1,6 +1,8 @@
 
 import useFetch from "../hooks/useFetch"
+import Hero from "../components/Hero";
 import Collections from "../components/Collections"
+
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -65,6 +67,8 @@ const CollectionsPage = ({setDarkBg}) => {
 
     return ( 
         <main className="main">
+            {/* {arts && <Hero arts={arts} />} */}
+            <Hero />
             {/* section 2 */}
             <section className="section container search-section">
                 <div className="info">
