@@ -46,10 +46,10 @@
     }
   }
   .left-attire-img {
-    background-image: url(/images/under_hero_teasers/hero_teaser_img_1.jpg);
+    background-image: url(/images/under_hero_teasers/hero_teaser_img_1.webp), url(/images/under_hero_teasers/hero_teaser_img_1.png);
   }
   .right-attire-img {
-    background-image: url(/images/under_hero_teasers/hero_teaser_img_2.jpg);
+    background-image: url(/images/under_hero_teasers/hero_teaser_img_2.webp), url(/images/under_hero_teasers/hero_teaser_img_2.png);
   }
   /* --------------- */
   .top-art-showoff {
@@ -57,7 +57,7 @@
     flex-direction: column;
   }
   .top-img {
-    background-image: url(/images/top_img.jpg);
+    background-image: url(/images/top_img.jpg), url(/images/top_img.webp);
     background-color: var(--primary-clr-alt);
     background-position: center;
     background-repeat: no-repeat;

@@ -7,28 +7,32 @@ const Hero = () => {
         'heroArts': [
             {
                 'id': 0,
-                'imgPath': '/images/hero_img_1.jpg',
+                'imgPathWebp': '/images/hero_img_1.webp',
+                'imgPathPng': '/images/hero_img_1.png',
                 'title': 'Husking Bee, Island of Nantucket',
                 'author': 'Eastman Johnson',
                 'date': 'American, 1824–1906'
             },
             {
                 'id': 1,
-                'imgPath': '/images/hero_img_2.jpg',
+                'imgPathWebp': '/images/hero_img_2.webp',
+                'imgPathPng': '/images/hero_img_2.png',
                 'title': 'Landscape with Saint John on Patmos',
                 'author': 'Nicolas Poussin',
                 'date': 'French, 1594–1665'
             },
             {
                 'id': 2,
-                'imgPath': '/images/hero_img_3.jpg',
+                'imgPathWebp': '/images/hero_img_3.webp',
+                'imgPathPng': '/images/hero_img_3.png',
                 'title': 'Purple Plums',
                 'author': 'Cadurcis Plantagenet Ream',
                 'date': 'American, 1838–1917'
             },
             {
                 'id': 3,
-                'imgPath': '/images/hero_img_4.jpg',
+                'imgPathWebp': '/images/hero_img_4.webp',
+                'imgPathPng': '/images/hero_img_4.png',
                 'title': 'The Herring Net',
                 'author': 'Winslow Homer',
                 'date': 'American, 1836–1910'
@@ -61,7 +65,7 @@ const Hero = () => {
     }
     return ( 
         <div id="hero">
-            <section className="section hero-section" style={{ backgroundImage: "url("+heroImg.imgPath+")" }}>
+            <section className="section hero-section" style={{ backgroundImage: "url("+heroImg.imgPathWebp+"), url("+heroImg.imgPathPng+")" }}>
                 <Header />
                 <div className="hero-art-info-container">
                     <div className="hero-art-info container">
