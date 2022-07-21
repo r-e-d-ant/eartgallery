@@ -17,9 +17,9 @@ const Home = ({setDarkBg}) => {
             <section className="section teaser-section">
                 <div className="left-attire-img attire-img-container card-img-shadow">
                     <div className="artist-desc">
-                        <h2 className="art-title">A Sunday on La Grande Jatte — 1884</h2>
-                        <h3 className="art-author">Georges Seurat</h3>
-                        <h5 className="date-out">French, 1840-1926</h5>
+                        <h2 className="art-title">Cupid Chastised</h2>
+                        <h3 className="art-author">Bartolomeo Manfredi</h3>
+                        <h5 className="date-out">Italian, 1582-1622</h5>
                     </div>
                 </div>
                 <div className="credit-container container">
@@ -28,9 +28,9 @@ const Home = ({setDarkBg}) => {
                 </div>
                 <div className="right-attire-img attire-img-container card-img-shadow">
                     <div className="artist-desc">
-                        <h2 className="art-title">A Sunday on La Grande Jatte — 1884</h2>
-                        <h3 className="art-author">Georges Seurat</h3>
-                        <h5 className="date-out">French, 1840-1926</h5>
+                        <h2 className="art-title">Mountain Brook</h2>
+                        <h3 className="art-author">Albert Bierstadt</h3>
+                        <h5 className="date-out">American, born Germany, 1830–1902</h5>
                     </div>
                 </div>
             </section>
@@ -40,11 +40,11 @@ const Home = ({setDarkBg}) => {
                     <div className="top-img"></div>
                     <div className="top-img-desc-container">
                         <div className="top-info">
-                            <h2 className="top-img-title">Arrival of the Normandy Train, Gare Saint-Lazare</h2>
-                            <h3 className="top-img-desc">Loosely painted image of an open-air train station. On the right, a parked train gives off an enormous plumb of white smoke, making the scene look as though it were full of clouds. A huddled mass of barely discernible people crowd around the train on both sides of the tracks. Blue, green, and gray tones dominate.</h3>
-                            <h4 className="top-img-author">Claude Monet</h4>
+                            <h2 className="top-img-title">The Wedding at Cana</h2>
+                            <h3 className="top-img-desc">Giuseppe Maria Crespi filled this depiction of the wedding feast where Jesus performed his first miracle with luxurious accessories and smaller interactions between characters within the larger narrative. On the left, Jesus converses with his mother; on the right, the wedding’s astonished host and his servant taste the water Jesus has miraculously turned into wine. The painting brings together the Venetian tradition of color and grandeur with the close observation of figures characteristic of the artist’s native Bologna.</h3>
+                            <h4 className="top-img-author">Giuseppe Maria Crespi</h4>
                         </div>
-                        <h5 className="date-out">French, 1840-1926</h5>
+                        <h5 className="date-out">Italian, 1665-1747</h5>
                     </div>
                 </div>
             </section>

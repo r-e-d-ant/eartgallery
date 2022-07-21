@@ -9,8 +9,6 @@ const useFetch = (url) => {
     const effectRun = useRef(false);
 
     useEffect(() => {
-        console.log('mounted');
-
         const abortCont = new AbortController();
 
         if(effectRun.current === 'true') {
@@ -25,7 +23,6 @@ const useFetch = (url) => {
                 setData(data);
                 setIsPending(false);
                 setError(null);
-                console.log(data);
             })
             .catch(err => {
                 if(err.message === 'AbortError') {
@@ -36,7 +33,6 @@ const useFetch = (url) => {
                 }
             });
         }
-        console.log('unmounted');
         effectRun.current = 'true';
         
         return () => abortCont.abort();
