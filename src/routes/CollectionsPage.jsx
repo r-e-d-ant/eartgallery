@@ -12,7 +12,7 @@ const CollectionsPage = ({setDarkBg}) => {
 
     // url to fetch data from
     const [currentUrl, setCurrentUrl] = useState('https://api.artic.edu/api/v1/artworks?page=1&limit=50&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice,thumbnail');
-    const {data: arts, isPending, error} = useFetch(`${currentUrl}`); // fetching the data
+    const {data: arts, isPending, error} = useFetch('https://api.artic.edu/api/v1/artworks?page=1&limit=50&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice,thumbnail'); // fetching the data
 
     const location = useLocation(); // to get current route informations
 
