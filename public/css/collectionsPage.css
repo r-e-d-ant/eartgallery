@@ -79,14 +79,16 @@
   font-size: 1.2rem;
   margin: 2rem 0;
   padding: .4rem 0;
-  width: 5rem;
-  border: none;
-  color: var(--second-clr);
-  background-color: var(--primary-clr-alt);
+  width: 10%;
+  color: var(--primary-clr);
+  border: thin solid var(--primary-clr);
+  /* background-color: var(--primary-clr-alt); */
   transition: 250ms background, 150ms border;
 }
 .nav-btns-container button:disabled {
   cursor: not-allowed;
+  border: none;
+  color: var(--second-clr);
   background-color: var(--second-clr-alt);
 }
 .nav-btns-container button:hover:disabled {
@@ -96,5 +98,6 @@
   margin-right: 1rem;
 }
 .nav-btns-container button:hover {
+  color: var(--second-clr);
   background-color: var(--primary-clr);
 }

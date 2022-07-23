@@ -99,12 +99,12 @@ const CollectionsPage = ({setDarkBg}) => {
 
             {arts && arts.pagination.prev_url ? (
                 <div className="container nav-btns-container">
-                    {arts && <button onClick={() => prevPage(arts.pagination.prev_url)} disabled={arts.pagination.current_page <= 1 ? true : false}>prev</button>}
+                    {arts && <button onClick={() => prevPage(arts.pagination.prev_url)} disabled={arts.pagination.current_page <= 1 ? true : false}>previous</button>}
                     {arts && <button onClick={() => nextPage(arts.pagination.next_url)} disabled={arts.pagination.current_page === arts.pagination.total_pages ? true : false }>next</button>}
                 </div>
             ) :
             <div className="container nav-btns-container">
-                {arts && <button onClick={prevPageSearch} disabled={arts.pagination.current_page <= 1 ? true : false}>prev</button>}
+                {arts && <button onClick={prevPageSearch} disabled={arts.pagination.current_page <= 1 ? true : false}>previous</button>}
                 {arts && <button onClick={nextPageSearch} disabled={arts.pagination.current_page === arts.pagination.total_pages ? true : false }>next</button>}
             </div>
             }
