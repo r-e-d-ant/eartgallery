@@ -11,8 +11,7 @@ const useFetch = (url) => {
     useEffect(() => {
         const abortCont = new AbortController();
 
-        if(effectRun.current === 'true') {
-            fetch(url, {signal: abortCont.signal})
+        fetch(url, {signal: abortCont.signal})
             .then(res => {
                 if(!res.ok) {
                     throw Error("Could not fetch the data for that resource");
@@ -32,8 +31,6 @@ const useFetch = (url) => {
                     setIsPending(false);
                 }
             });
-        }
-        effectRun.current = 'true';
         
         return () => abortCont.abort();
     }, [url]);
