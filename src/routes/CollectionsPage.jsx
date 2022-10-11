@@ -6,9 +6,12 @@ import Collections from "../components/Collections"
 import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
+import { Eart } from "../context/EartContext";
+
 const CollectionsPage = ({setDarkBg}) => {
     const [searchData, setSearchData] = useState(''); // to store search query
     const [searchError, setSearchError] = useState(false); // to store search error message
+    const { darkBg } = Eart();
 
     // url to fetch data from
     const [currentUrl, setCurrentUrl] = useState('https://api.artic.edu/api/v1/artworks?page=1&limit=50&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice,thumbnail');
@@ -66,7 +69,7 @@ const CollectionsPage = ({setDarkBg}) => {
     }
 
     return ( 
-        <main className="main">
+        <main className={ "main " + (darkBg ? 'dark-bg' : '')}>
             {/* {arts && <Hero arts={arts} />} */}
             <Hero />
             {/* section 2 */}

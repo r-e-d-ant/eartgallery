@@ -4,12 +4,14 @@ import { Link } from "react-router-dom"
 import useFetch from "../hooks/useFetch"
 import Hero from "../components/Hero";
 import Collections from "../components/Collections"
+import { Eart } from "../context/EartContext";
 
-const Home = ({setDarkBg}) => {
+const Home = () => {
     const {data: arts, isPending, error} = useFetch('https://api.artic.edu/api/v1/artworks?page=1&limit=12&fields=id,api_link,title,artist_title,image_id,publication_history,place_of_origin,date_display,copyright_notice,thumbnail');
+    const { darkBg } = Eart();
 
     return (
-        <main className="main">
+        <main className={"main " + (darkBg ? 'dark-bg' : '')}>
             {/* section 1 */}
             {/* {arts && <Hero arts={arts} />} */}
             <Hero />
@@ -52,7 +54,7 @@ const Home = ({setDarkBg}) => {
             <section className="section hero-allimages-container">
                 {error && <div className="error-message container"><h2>{ error }</h2></div>}
                 {isPending && <div className="loading container">Loading...</div>}
-                {arts && <Collections arts={arts.data} apiConfig={arts.config} setDarkBg={setDarkBg} />}
+                {arts && <Collections arts={arts.data} apiConfig={arts.config}/>}
 
                 <div className="call-to-see-collections-container">
                     <div className="container call-to-see-collections">

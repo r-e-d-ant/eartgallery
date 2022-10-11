@@ -1,8 +1,12 @@
 
 import { useState } from "react";
+import { Eart } from "../context/EartContext";
 import ArtInfo from "./ArtInfo";
 
-const Collections = ({arts, apiConfig, setDarkBg}) => {
+const Collections = ({arts, apiConfig}) => {
+
+    const { setDarkBg } = Eart();
+
     const [artInfo, setArtInfo] = useState(true);
     const [artData, setArt] = useState(null);
 
@@ -26,7 +30,7 @@ const Collections = ({arts, apiConfig, setDarkBg}) => {
                 </div>
             ))}
         </div>
-        {artInfo && artData ? <ArtInfo art={artData} setArtInfo={setArtInfo} apiConfig={apiConfig} setDarkBg={setDarkBg} /> : null}
+        {artInfo && artData ? <ArtInfo art={artData} setArtInfo={setArtInfo} apiConfig={apiConfig} /> : null}
         </>
     );
 }
