@@ -13,7 +13,6 @@ const Home = () => {
     return (
         <main className={"main " + (darkBg ? 'dark-bg' : '')}>
             {/* section 1 */}
-            {/* {arts && <Hero arts={arts} />} */}
             <Hero />
             {/* section 2 */}
             <section className="section teaser-section">
