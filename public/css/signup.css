@@ -1,0 +1,54 @@
+
+.signup-section {
+    display: flex;
+}
+.signup-container {
+    width: 40%;
+}
+.hero-container {
+    width: 60%;
+}
+@media screen and (max-width: 1024px) {
+    .hero-container {
+        display: none;
+    }
+    .signup-container {
+        width: 100%;
+    }
+}
+
+.form-container {
+    padding-bottom: 1rem;
+}
+.page-title {
+    color: var(--primary-clr-alt);
+    font-size: 2rem;
+    font-weight: 500;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+}
+.page-title .logo {
+    font-size: 2rem;
+}
+
+.form-control {
+    margin-bottom: 1rem;
+}
+
+.signup-label,
+.login-label {
+    color: var(--primary-clr-alt);
+    margin-bottom: .5rem;
+}
+.signup-input,
+.login-input {
+    margin-top: .3rem;
+}
+.signup-btn,
+.login-btn {
+  font-size: 1.1rem;
+  color: var(--second-clr);
+  border-radius: 5px;
+  height: 2.6rem;
+  padding: 0 1rem;
+}

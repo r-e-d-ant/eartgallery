@@ -1,6 +1,11 @@
 
 // import { useEffect } from "react";
 import { createContext, useContext, useState } from "react";
+import { auth } from '../firebase';
+
+import { 
+    createUserWithEmailAndPassword
+ } from 'firebase/auth';
 
 const EartContext = createContext();
 
@@ -9,8 +14,14 @@ export const ContextProvider = ({ children }) => {
     // and there will be a modal only on view!
     const [darkBg, setDarkBg] = useState(false);
 
+    // function to create a user
+    const createUser = (email, password) => {
+        console.log(email, password);
+        return createUserWithEmailAndPassword(auth, email, password);
+    }
+
     return (
-        <EartContext.Provider value={{ darkBg, setDarkBg }}>
+        <EartContext.Provider value={{ darkBg, setDarkBg, createUser }}>
             { children }
         </EartContext.Provider>
     )

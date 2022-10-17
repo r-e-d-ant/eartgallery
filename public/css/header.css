@@ -9,9 +9,11 @@
     padding-top: 1rem;
 }
 .logo {
-    color: var(--second-clr);
     font-family: 'Carter One', sans-serif;
     font-size: 1rem;
+}
+.header-logo {
+    color: var(--second-clr);
 }
 .nav-links {
     display: flex;

@@ -6,6 +6,8 @@ import CollectionsPage from "./routes/CollectionsPage";
 import NotFound from "./routes/NotFound";
 import Footer from "./components/Footer";
 import { ContextProvider } from './context/EartContext';
+import Signup from "./routes/Signup";
+import Login from "./routes/Login";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/collections" element={<CollectionsPage />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
