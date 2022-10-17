@@ -1,6 +1,5 @@
-
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import { Eart } from "../context/EartContext";
 
@@ -8,17 +7,19 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { createUser } = Eart();
+  const { signInUser } = Eart();
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-      await createUser(email, password)
-      .then((({user}) => {
+      await signInUser(email, password).then(({ user }) => {
+        navigate("/home");
         console.log(user);
         console.log("hello");
-      }));
+      });
     } catch (error) {
       console.log(error);
     }
@@ -30,7 +31,9 @@ const Login = () => {
       </nav>
       <section className="signup-section">
         <div className="signup-container container">
-          <h2 className="page-title">Log in to <span className="logo">eArtGallery</span></h2>
+          <h2 className="page-title">
+            Log in to <span className="logo">eArtGallery</span>
+          </h2>
 
           <div className="form-container">
             <form action="" onSubmit={handleSubmit}>
@@ -39,12 +42,12 @@ const Login = () => {
                   Email
                 </label>
                 <input
-                    type="email"
-                    id="email"
-                    className="input signup-input"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                 />
+                  type="email"
+                  id="email"
+                  className="input signup-input"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
               </div>
               <div className="form-control">
                 <label htmlFor="password" className="signup-label">
