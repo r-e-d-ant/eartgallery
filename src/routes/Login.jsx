@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
@@ -6,6 +7,7 @@ import { Eart } from "../context/EartContext";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMsgs, setErrorMsgs] = useState([]); // to store error messages
 
   const { signInUser } = Eart();
 
@@ -15,13 +17,27 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      await signInUser(email, password).then(({ user }) => {
+      await signInUser(email, password).then(() => {
         navigate("/home");
-        console.log(user);
-        console.log("hello");
       });
     } catch (error) {
-      console.log(error);
+      switch (error.message) {
+        case "Firebase: Error (auth/wrong-password).":
+          setErrorMsgs((oldErrorMsg) => [
+            ...oldErrorMsg,
+            "Invalid email or password",
+          ]);
+          break;
+        case "Firebase: Error (auth/user-not-found).":
+          setErrorMsgs((oldErrorMsg) => [
+            ...oldErrorMsg,
+            "Invalid email or password",
+          ]);
+          break;
+        default:
+          setErrorMsgs((oldErrorMsg) => [...oldErrorMsg, error.message]);
+          break;
+      }
     }
   };
   return (
@@ -36,6 +52,16 @@ const Login = () => {
           </h2>
 
           <div className="form-container">
+            <div
+              className="error-msg-container"
+              hidden={errorMsgs.length > 0 ? false : true}
+            >
+              <ul>
+                {errorMsgs.map((errorMsg, index) => (
+                  <li key={index}>{errorMsg}</li>
+                ))}
+              </ul>
+            </div>
             <form action="" onSubmit={handleSubmit}>
               <div className="form-control">
                 <label htmlFor="email" className="signup-label">
@@ -61,6 +87,10 @@ const Login = () => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
+
+              <Link to="/reset-password" className="forgot-pwd">
+                Forgot my password?
+              </Link>
 
               <div className="form-control">
                 <button type="submit" className="btn signup-btn">

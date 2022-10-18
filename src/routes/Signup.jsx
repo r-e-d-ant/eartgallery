@@ -1,26 +1,51 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import { Eart } from "../context/EartContext";
+import PasswordChecklist from "react-password-checklist";
 
 const Signup = () => {
   const [username, setUsername] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [validUsername, setValidUsername] = useState(false);
 
-  const { createUser } = Eart();
+  const [email, setEmail] = useState("");
+  const [validEmail, setValidEmail] = useState(false);
+
+  const [password, setPassword] = useState("");
+  const [validPassword, setValidPassword] = useState(false);
+
+  const [errorMsgs, setErrorMsgs] = useState([]);
+
+  const { createUser, verifyEmail, logoutUser } = Eart();
+
+  const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       await createUser(email, password)
-      .then((({user}) => {
-        console.log(user);
-        console.log("hello");
-      }));
+        .then(({ user }) => {
+          console.log("hello", user.email);
+          setErrorMsgs([]);
+          verifyEmail(user);
+          navigate("/verify-email");
+        })
+        .then((user) => {
+          logoutUser(user); // logout user after signup so that he can signin again
+        });
     } catch (error) {
-      console.log(error);
+      switch (error.message) {
+        case "Firebase: Error (auth/email-already-in-use).":
+          setErrorMsgs((oldErrorMsg) => [
+            ...oldErrorMsg,
+            "Sorry! Email already in use.",
+          ]);
+          break;
+        default:
+          setErrorMsgs((oldErrorMsg) => [...oldErrorMsg, error.message]);
+          break;
+      }
     }
   };
   return (
@@ -33,6 +58,16 @@ const Signup = () => {
           <h2 className="page-title">Sign Up</h2>
 
           <div className="form-container">
+            <div
+              className="error-msg-container"
+              hidden={errorMsgs.length > 0 ? false : true}
+            >
+              <ul>
+                {errorMsgs.map((errorMsg, index) => (
+                  <li key={index}>{errorMsg}</li>
+                ))}
+              </ul>
+            </div>
             <form action="" onSubmit={handleSubmit}>
               <div className="form-control">
                 <label htmlFor="username" className="signup-label">
@@ -43,7 +78,13 @@ const Signup = () => {
                   id="username"
                   className="input signup-input"
                   value={username}
-                  onChange={(e) => setUsername(e.target.value)}
+                  onChange={(e) => {
+                    setUsername(e.target.value);
+                    username.length > 1
+                      ? setValidUsername(true)
+                      : setValidUsername(false);
+                  }}
+                  required
                 />
               </div>
               <div className="form-control">
@@ -51,12 +92,18 @@ const Signup = () => {
                   Email
                 </label>
                 <input
-                    type="email"
-                    id="email"
-                    className="input signup-input"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                 />
+                  type="email"
+                  id="email"
+                  className="input signup-input"
+                  value={email}
+                  onChange={(e) => {
+                    setEmail(e.target.value);
+                    email.length > 5
+                      ? setValidEmail(true)
+                      : setValidEmail(false);
+                  }}
+                  required
+                />
               </div>
               <div className="form-control">
                 <label htmlFor="password" className="signup-label">
@@ -70,9 +117,29 @@ const Signup = () => {
                   onChange={(e) => setPassword(e.target.value)}
                 />
               </div>
+              <PasswordChecklist
+                rules={[
+                  "lowercase",
+                  "capital",
+                  "specialChar",
+                  "number",
+                  "minLength",
+                ]}
+                iconSize={14}
+                minLength={6}
+                invalidColor={"#e56b6f"}
+                value={password}
+                onChange={(isValid) => {
+                  setValidPassword(isValid);
+                }}
+              />
 
-              <div className="form-control">
-                <button type="submit" className="btn signup-btn">
+              <div className="form-control btn-form-control">
+                <button
+                  type="submit"
+                  disabled={!validUsername || !validEmail || !validPassword}
+                  className="btn signup-btn"
+                >
                   Sign Up
                 </button>
               </div>
