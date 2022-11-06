@@ -1,9 +1,9 @@
 import { Navigate } from "react-router-dom";
-import { Eart } from "../context/EArtContext";
+import { Eart } from "../context/EartContext";
 
 const ProtectedRoutes = ({ children }) => {
   const { user } = Eart();
-
+  
   if (!user) {
     return <Navigate to={'/home'} />
   } return children;

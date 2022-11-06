@@ -14,6 +14,7 @@ const Header = () => {
                 <ul className="nav-links">
                     <li className="nav-item"><Link to={'/'} className="nav-link">Home</Link></li>
                     <li className="nav-item"><Link to={'/collections'} className="nav-link">Collections</Link></li> 
+                    { user && <li className="nav-item"><Link to={'/profile'} className="nav-link">Profile</Link></li> }
                     { !user && <li className="nav-item"><Link to={'/login'} className="nav-link">Login</Link></li> }
                     { !user && <li className="nav-item"><Link to={'/signup'} className="nav-link">Sign Up</Link></li> }
                     { user && <li className="nav-item" onClick={() => logoutUser()}><Link to={'/'} className="nav-link">Logout</Link></li> }

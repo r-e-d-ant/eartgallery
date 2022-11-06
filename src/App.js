@@ -6,9 +6,11 @@ import CollectionsPage from "./routes/CollectionsPage";
 import NotFound from "./routes/NotFound";
 import Footer from "./components/Footer";
 import { ContextProvider } from './context/EartContext';
+import ProtectedRoutes from "./routes/ProtectedRoutes";
 import Signup from "./routes/Signup";
 import EmailConfirmation from "./routes/EmailConfirmation";
 import Login from "./routes/Login";
+import Profile from './routes/Profile';
 import ResetPassword from "./routes/ResetPassword";
 import EmailResetInfo from "./routes/EmailResetInfo";
 
@@ -22,6 +24,7 @@ function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/collections" element={<CollectionsPage />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/profile" element={<ProtectedRoutes><Profile /></ProtectedRoutes>} />
             <Route path="/reset-password" element={<ResetPassword />} />
             <Route path="/signup" element={<Signup />} />
             <Route path="/verify-email" element={<EmailConfirmation />} />
